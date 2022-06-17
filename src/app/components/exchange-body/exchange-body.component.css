@@ -1,0 +1,29 @@
+.exchange-inputs {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 8px;
+}
+
+.exchange-inputs input,
+.exchange-inputs select {
+  display: block;
+  flex-grow: 1;
+}
+
+@media (min-width: 320px) {
+  .exchange-inputs {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 0px;
+  }
+
+  .exchange-inputs input {
+    display: block;
+    flex-grow: 3;
+  }
+
+  .exchange-inputs select {
+    display: block;
+    flex-grow: 1;
+  }
+}

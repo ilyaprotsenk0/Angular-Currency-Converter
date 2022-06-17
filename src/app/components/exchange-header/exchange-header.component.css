@@ -1,0 +1,8 @@
+span {
+  display: inline-block;
+  margin-bottom: 4px;
+}
+
+.currency-name {
+  margin-right: 4px;
+}

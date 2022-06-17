@@ -1,0 +1,56 @@
+<div>
+  <div class="exchange-inputs">
+    <input
+      type="number"
+      min="0"
+      #topInput
+      (input)="
+        calculateCurrency(topInput, topSelect, bottomInput, bottomSelect)
+      "
+      (keydown)="preventTypingArithmeticOperations($event)"
+    />
+    <select
+      name="top-currency"
+      id="top-currency"
+      #topSelect
+      (change)="
+        calculateCurrency(topInput, topSelect, bottomInput, bottomSelect)
+      "
+    >
+      <option
+        *ngFor="let currency of currencies"
+        [value]="currency.name"
+        [selected]="currency.name === 'UAH' ? true : false"
+      >
+        {{ currency.name }}
+      </option>
+    </select>
+  </div>
+  <div class="exchange-inputs">
+    <input
+      type="number"
+      min="0"
+      #bottomInput
+      (input)="
+        calculateCurrency(bottomInput, bottomSelect, topInput, topSelect)
+      "
+      (keydown)="preventTypingArithmeticOperations($event)"
+    />
+    <select
+      name="bottom-currency"
+      id="bottom-currency"
+      #bottomSelect
+      (change)="
+        calculateCurrency(topInput, topSelect, bottomInput, bottomSelect)
+      "
+    >
+      <option
+        *ngFor="let currency of currencies"
+        [value]="currency.name"
+        [selected]="currency.name === 'USD' ? true : false"
+      >
+        {{ currency.name }}
+      </option>
+    </select>
+  </div>
+</div>

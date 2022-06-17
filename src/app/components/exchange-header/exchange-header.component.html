@@ -1,0 +1,8 @@
+<div class="currencies-container">
+  <ng-container *ngFor="let currency of currencies">
+    <p *ngIf="currency.name !== 'UAH'">
+      <span class="currency-name">{{ currency.name }} - </span>
+      <span>{{ currency.rate }}</span>
+    </p>
+  </ng-container>
+</div>
